@@ -69,11 +69,11 @@
             <h3>Things</h3>
             <ul>
               <li>We are here for you!</li>
-              <li>Every question is important</li>
-              <li>Don't wait! Ask questions as they come to you</li>
-              <li>Help each other</li>
-              <li>Have fun</li>
-              <li>Eat the snacks</li>
+              <li class="fragment">Every question is important</li>
+              <li class="fragment">Don't wait! Ask questions as they come to you</li>
+              <li class="fragment">Help each other</li>
+              <li class="fragment">Have fun</li>
+              <li class="fragment">Eat the snacks</li>
             </ul>
           </div>
         </section>
@@ -110,12 +110,14 @@
           <br>
           <br>
 
-          <h5>Class 4</h5>
-          <ul>
-            <li>App building</li>
-            <li>Beyond the Basics</li>
-            <li>Angular 2.0</li>
-          </ul>
+          <div class="fragment">
+            <h5>Class 4</h5>
+            <ul>
+              <li>App building</li>
+              <li>Beyond the Basics</li>
+              <li>Angular 2.0</li>
+            </ul>
+          </div>
         </section>
 
         <section>
@@ -127,54 +129,72 @@
             <li>What do you hope to get out of the class?</li>
             <li>Favorite restaurant</li>
           </ul>
+
+          <br>
+          <br>
+          <br>
+
           </div>
+            <p>
+              <span class="fragment">I'm Erin!</span>
+              <br>
+              <span class="fragment">I live and love in Durham</span>
+              <br>
+              <span class="fragment">I'm a Developer at Adwerx</span>
+              <br>
+              <span class="fragment">I really like these fade-in slides</span>
+            </p>
         </section>
 
         <section>
           <h3>What is AngularJS?</h3>
           <ul>
-            <li>A client-side JavaScript framework</li>
+            <li>A client-side JavaScript framework...</li>
           </ul>
           <br>
           <br>
-          <h4 class="fragment">Wait what's a framework tho</h4>
+          <div class="fragment">
+            <h4>Wait what's a framework tho</h4>
+            <img src="img/confuzed-thumb.jpg" alt="confused-cat" class="noborder" size=""/>
+          </div>
           <div class="left-align">
             <p class= "fragment">A software framework is a universal, reusable software environment</p>
             <p class="fragment">that provides particular functionality as part of a larger software platform</p>
             <p class="fragment">to facilitate development of software applications, products and solutions.</p>
+
           </div>
-          <!--<ul>-->
-            <!--<li>A client-side JavaScript framework for extending HTML in small &#8594; large apps</li>-->
-            <!--<li>Initially released in 2009 by Google</li>-->
-            <!--<li>Used in production by Google, Virgin America, HBO, msnbc, Nike, Urban Outfitters, &amp; more</li>-->
-            <!--<li>Known for data-binding, directives, dependency injection, &amp; more</li>-->
-            <!--<li>Falls within the family of MV* frameworks, and is often compared to Ember.js, Backbone.js, &amp; React</li>-->
-          <!--</ul>-->
         </section>
 
         <section>
-          <h3>What is a MV* framework?</h3>
+          <h3>Moar about AngularJS</h3>
+          <br>
           <ul>
-            <li>A variation of an MVC (Model View Controller)</li>
-            <li>Model &mdash; a type of data to model, like a user, account, photo, or note</li>
-            <li>View &mdash; the markup &amp; templates for the UI</li>
-            <li>Controller &mdash; handles input &amp; updates state of model</li>
-            <li>MVC, MVVM, MVVMCS, ...</li>
+            <li>Initially released in 2009 by Google</li>
+            <li class="fragment">A framework for adding interactivity to HTML</li>
+            <li class="fragment">Used to create Single Page Applications (SAP)</li>
+            <li class="fragment">Falls within the family of MV* frameworks, and is often compared to Ember.js, Backbone.js, &amp; React</li>
           </ul>
-        </section>
-
-        <section>
-          <h3>What is a MV* framework?</h3>
-          <img src="img/500px-MVC-Process.png" alt="Model updates view, user sees view, user uses controller, controller manipulates model">
-          <p><small>Image Credit: <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/500px-MVC-Process.svg.png" target="_blank">Wikimedia</a></small></p>
         </section>
 
         <section>
           <h3>What is a MV* framework?</h3>
           <ul>
             <li>Main features are some combination of routing, data binding, templates/views, models &amp; data access</li>
-            <li>Can be client- or server-side, and not specific to JavaScript</li>
+            <li class="fragment">Can be client- or server-side, and not specific to JavaScript</li>
+            <li class="fragment">A variation of an MVC (Model View Controller)</li>
+            <li class="fragment">Model &mdash; a type or piece of data to display or manipulate (a user, an account, a puppy, etc)</li>
+            <li class="fragment">View &mdash; the markup &amp; templates for the User Interface</li>
+            <li class="fragment">Controller &mdash; handles input &amp; updates the state of model</li>
           </ul>
+        </section>
+
+        <section>
+          <h3>What is a MV* framework?</h3>
+          <div class="left-align">
+            <img src="img/500px-MVC-Process.png" alt="Model updates view, user sees view, user uses controller, controller manipulates model">
+            <img src="img/Henry.jpg" alt="Henry-Brown">
+            <p><small>Image Credit: <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/500px-MVC-Process.svg.png" target="_blank">Wikimedia</a></small></p>
+          </div>
         </section>
 
         <section>
@@ -182,30 +202,25 @@
           <ul>
             <li>There's much debate on what exactly Angular is</li>
             <li>Angular has evolved since release, and developers implement it differently</li>
-            <li>Many agree that it is an MVW (Model View Whatever)</li>
+            <li>Many agree (including Angular!) that it is an MVW (Model View Whatever)</li>
           </ul>
         </section>
 
         <section>
           <h3>Why Use Angular?</h3>
           <ul>
-            <li>Easy to get up and running</li>
-            <li>Code organization</li>
-            <li>Speedy websites</li>
-            <li>Unit testing</li>
-            <li>Many, many resources</li>
+            <li class="fragment">Easy to get up and running</li>
+            <li class="fragment">Code organization</li>
+            <li class="fragment">Speedy websites</li>
+            <li class="fragment">Unit testing</li>
+            <li class="fragment">Many, many resources</li>
           </ul>
         </section>
 
         <section>
           <h3>An example Angular App</h3>
-          <p>A basic <a href="demo-files/completed-exercises/todo-list/todo-list.html" target="_blank">todo list app</a></p>
-          <p>The <a href="demo-files/completed-exercises/todo-list/todo-list.txt" target="_blank">app's markup</a></p>
-          <br />
-          <ul>
-            <li>You'll notice {{ }} and attributes beginning with ng-</li>
-            <li>Those are the key components of an Angular View!</li>
-          </ul>
+          <p data-height="265" data-theme-id="0" data-slug-hash="ONdQWe" data-default-tab="result" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/ONdQWe/">ToDo.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </section>
 
         <section>
