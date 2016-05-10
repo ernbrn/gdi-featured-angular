@@ -96,8 +96,8 @@
           <div class="fragment">
             <h5>If we have time...</h5>
             <ul>
-              <li>Built-in Directives</li>
-              <li>Controllers</li>
+              <li>Two Way Data Binding</li>
+              <li>Moar Built-in Directives</li>
             </ul>
           </div>
         </section>
@@ -265,6 +265,54 @@
             <li>Include html with a few string &amp; number expressions </li>
           </ul>
         </section>
+
+
+          <section>
+            <h3>Two-Way Data Binding</h3>
+            <p>The <a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank">ng-model</a> directive binds the value of an <code>input</code>, <code>select</code>, or <code>textarea</code> to an object that can be used in an expression</p>
+<pre style="width:500px;"><code>&lt;body ng-app&gt;
+  &lt;label>Name:&lt;/label&gt;
+  &lt;input type="text" ng-model="yourName"&gt;
+  &lt;hr&gt;
+  &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>Two-Way Data Binding: Example with Puppies</h3>
+            <p data-height="384" data-theme-id="0" data-slug-hash="ONdYWY" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/ONdYWY/">simpleDogApp.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          </section>
+
+          <section>
+            <h3>Two-Way Data Binding</h3>
+            <p>Expressions can be inserted as the value html attributes as well as text within html tags</p>
+<pre><code>&lt;body ng-app&gt;
+  &lt;label>Name:&lt;/label&gt;
+  &lt;input type="text" ng-model="user.status"&gt;
+  &lt;hr&gt;
+  &lt;h1 class="status-text-{{user.status}}"&gt;Your status is:  {{user.status}}!&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>Two-Way Data Binding: Example with Puppies</h3>
+            <p data-height="384" data-theme-id="0" data-slug-hash="ONdYWY" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/ONdYWY/">simpleDogApp.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          </section>
+
+          <section>
+            <h3>Exercise</h3>
+            <ul>
+              <li>In hello-world.html, within your ng-app, add the markup for a form input field</li>
+              <li>Also add the markup for a heading
+              <li>Bind the value of the input to text within your heading tags by using ng-model </li>
+              <li>Try to add a few more data-bindings with ng-model!</li>
+            </ul>
+          </section>
+
 
         <section>
           <h3>An example Angular App</h3>

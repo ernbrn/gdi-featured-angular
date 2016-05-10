@@ -49,39 +49,6 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
-          <section>
-            <h3>Two-Way Data Binding</h3>
-            <p>The <a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank">ng-model</a> directive binds the value of an <code>input</code>, <code>select</code>, or <code>textarea</code> to an object that can be used in an expression</p>
-<pre><code>&lt;body ng-app&gt;
-  &lt;label>Name:&lt;/label&gt;
-  &lt;input type="text" ng-model="yourName"&gt;
-  &lt;hr&gt;
-  &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
-&lt;/body&gt;
-</code></pre>
-          </section>
-
-          <section>
-            <h3>Two-Way Data Binding</h3>
-            <p>Expressions can be inserted as the value html attributes as well as text within html tags</p>
-<pre><code>&lt;body ng-app&gt;
-  &lt;label>Name:&lt;/label&gt;
-  &lt;input type="text" ng-model="user.status"&gt;
-  &lt;hr&gt;
-  &lt;h1 class="status-text-{{user.status}}"&gt;Your status is:  {{user.status}}!&lt;/h1&gt;
-&lt;/body&gt;
-</code></pre>
-          </section>
-
-          <section>
-            <h3>Exercise</h3>
-            <ul>
-              <li>In hello-world.html, within your ng-app, add the markup for a form input field</li>
-              <li>Also add the markup for a heading
-              <li>Bind the value of the input to text within your heading tags by using ng-model </li>
-              <li>Try to add a few more data-bindings with ng-model!</li>
-            </ul>
-          </section>
 
           <section>
             <h3>More Built-In Directives: <br />ng-repeat</h3>
