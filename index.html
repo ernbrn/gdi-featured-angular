@@ -98,103 +98,6 @@
             </ul>
           </section>
 
-          <section>
-            <h3>More Built-In Directives: <br />ng-init</h3>
-            <p><code>ng-init</code> sets an initial value</p>
-<pre><code class="xml">&lt;head&gt;
-  &lt;!-- add icon font library --&gt;
-  &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
-&lt;/head&gt;
-
-&lt;body ng-app&gt;
-  &lt;nav ng-init="isOpen=false" class="mobile-nav"&gt;
-    &lt;button&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/button&gt;
-    &lt;ul ng-show="isOpen"&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Blog&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/body&gt;
-            </code></pre>
-          </section>
-
-          <section>
-            <h3>More Built-In Directives: <br />ng-click</h3>
-            <p>Angular's click listener</p>
-<pre><code class="xml">&lt;body ng-app&gt;
-  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
-    &lt;button ng-click="isOpen = !isOpen"&gt;
-      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-    &lt;ul ng-show="isOpen"&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Blog&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/body&gt;
-</code></pre>
-            <p><small><strong>Bonus!</strong> Angular will make your <code>ng-click</code> elements work with the keyboard too.</small></p>
-          </section>
-
-          <section>
-            <h3>More Built-In Directives: <br />ng-class</h3>
-            <p><code>ng-class</code> conditionally adds a class based on value</p>
-<pre><code class="xml">&lt;body ng-app&gt;
-  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
-
-    &lt;p ng-class="{'highlight': isOpen}"&gt;My Menu&lt;/p&gt;
-
-    &lt;button ng-click="isOpen = !isOpen"&gt;
-      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-    &lt;ul ng-show="isOpen"&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Blog&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/body&gt;
-</code></pre>
-          </section>
-
-          <section>
-            <h3>More Built-In Directives: <br />ng-class</h3>
-            <p>Here's another example:</p>
-<pre><code class="xml">&lt;body ng-app&gt;
-  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
-    &lt;button ng-click="isOpen = !isOpen"&gt;
-      &lt;i class="fa" ng-class="{
-        'fa-caret-square-o-down': !isOpen,
-        'fa-caret-square-o-up': isOpen}"&gt;
-      &lt;/i&gt;
-    &lt;/button&gt;
-    &lt;ul ng-show="isOpen"&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Blog&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/body&gt;
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Exercise</h3>
-          <ul>
-            <li>In hello-world.html, within your ng-app, add a new <code>section</code> or <code>div</code> where you set a value to true or false with <code>ng-init</code></li>
-            <li>Within that section/div, add a button with an <code>ng-click</code> directive that toggles the <code>ng-init</code> value</li>
-            <li>Use <code>ng-show</code> or <code>ng-hide</code> to show/hide an image of your pet (or your favorite animal) on click of your button </li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Note!</h3>
-          <p>It's good to know how ng-init works, but usually you'll use a controller for that purpose</p>
-          <p class="fragment">Before we talk about controllers, let's talk about modules!</p>
-        </section>
-
         <section>
           <h3>Modules</h3>
           <ul>
@@ -385,6 +288,103 @@ angular
             <li><a href="http://gregpike.net/demos/angular-local-storage/demo/demo.html">Angular Local Storage</a> is a popular module that uses the browser's local storage to persist your data without saving it to a database</li>
           </ul>
         </section>
+          <section>
+            <h3>More Built-In Directives: <br />ng-init</h3>
+            <p><code>ng-init</code> sets an initial value</p>
+<pre><code class="xml">&lt;head&gt;
+  &lt;!-- add icon font library --&gt;
+  &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
+&lt;/head&gt;
+
+&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen=false" class="mobile-nav"&gt;
+    &lt;button&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-click</h3>
+            <p>Angular's click listener</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+    &lt;button ng-click="isOpen = !isOpen"&gt;
+      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+</code></pre>
+            <p><small><strong>Bonus!</strong> Angular will make your <code>ng-click</code> elements work with the keyboard too.</small></p>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-class</h3>
+            <p><code>ng-class</code> conditionally adds a class based on value</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+
+    &lt;p ng-class="{'highlight': isOpen}"&gt;My Menu&lt;/p&gt;
+
+    &lt;button ng-click="isOpen = !isOpen"&gt;
+      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-class</h3>
+            <p>Here's another example:</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+    &lt;button ng-click="isOpen = !isOpen"&gt;
+      &lt;i class="fa" ng-class="{
+        'fa-caret-square-o-down': !isOpen,
+        'fa-caret-square-o-up': isOpen}"&gt;
+      &lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+          <ul>
+            <li>In hello-world.html, within your ng-app, add a new <code>section</code> or <code>div</code> where you set a value to true or false with <code>ng-init</code></li>
+            <li>Within that section/div, add a button with an <code>ng-click</code> directive that toggles the <code>ng-init</code> value</li>
+            <li>Use <code>ng-show</code> or <code>ng-hide</code> to show/hide an image of your pet (or your favorite animal) on click of your button </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Note!</h3>
+          <p>It's good to know how ng-init works, but usually you'll use a controller for that purpose</p>
+          <p class="fragment">Before we talk about controllers, let's talk about modules!</p>
+        </section>
+
 
         <section>
           <h3>Dependency Injection</h3>
