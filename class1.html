@@ -85,7 +85,8 @@
               <li>Introductions</li>
               <li>Overview of MVC patterns</li>
               <li>Intro to Angular</li>
-              <li>Overview of a basic Angular app</li>
+              <li>Intro to Directives!</li>
+              <li>Expressions</li>
               <li>Code a thing!</li>
             </ul>
 
@@ -93,31 +94,10 @@
           <br>
 
           <div class="fragment">
-            <h5>Class 2</h5>
+            <h5>If we have time...</h5>
             <ul>
-              <li>Built-in Directives and Expressions</li>
-              <li>Controllers &amp; $scope</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h3>Agenda</h3>
-          <h5>Class 3</h5>
-          <ul>
-            <li>Dependency Injection</li>
-            <li>Directives!</li>
-          </ul>
-
-          <br>
-          <br>
-
-          <div class="fragment">
-            <h5>Class 4</h5>
-            <ul>
-              <li>App building</li>
-              <li>Beyond the Basics</li>
-              <li>Angular 2.0</li>
+              <li>Built-in Directives</li>
+              <li>Controllers</li>
             </ul>
           </div>
         </section>
@@ -223,12 +203,6 @@
         </section>
 
         <section>
-          <h3>An example Angular App</h3>
-          <p data-height="374" data-theme-id="0" data-slug-hash="ONdQWe" data-default-tab="result" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/ONdQWe/">dogApp.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-        </section>
-
-        <section>
           <h3>Including Angular</h3>
           <p><a href="https://angularjs.org/">Download</a> and serve local file</p>
           <pre><code>&lt;script src="js/angular.min.js"&gt;&lt;script&gt;</code></pre>
@@ -240,35 +214,63 @@
         </section>
 
         <section>
+          <h3>Directives: The Heart and Soul of Angular</h3>
+          <ul>
+            <li>Directives are the feature of Angular that make it truly powerful</li>
+            <li class="fragment">"At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler... to attach a specified behavior to that DOM element... or even to transform the DOM element and its children."</li>
+            <li class="fragment">Angular comes with a bunch of built-in Directives</li>
+          </ul>
+        </section>
+
+        <section>
           <h3>Built-In Directives</h3>
-          <p>The Angular library looks for these attribute in your markup to know it should render Angular code</p>
-          <pre><code>&lt;body ng-app&gt;
-            &lt;h1&gt;Hello World!&lt;/h1&gt;
-          &lt;/body&gt;
-          </code></pre>
-          <p><a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a> is a required directive used to identify the root element and determine scope</p>
-          <!-- <small>(We'll cover what this code does shortly!)</small> -->
+          <p>
+            <a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a> is a required directive used to bootstrap our AngularJS application designate the root or parent element
+          </p>
+
+<pre style="width:300px;"><code>&lt;body ng-app&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;</code></pre>
         </section>
 
         <section>
           <h3>Expressions</h3>
-          <p>A way to insert data into html via a JavaScript string, number, object, or array</p>
-          <pre><code>&lt;body ng-app&gt;
-            &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
-            &lt;p&gt;My cat's name is {{ "Admiral " + "Snuggles" }}&lt;/p&gt;
-          &lt;/body&gt;</code></pre>
+          <ul>
+            <li>Angular expressions are JavaScript-like code snippets that are mainly placed in interpolation bindings</li>
+            <li>A way to insert data into html via a JavaScript string, number, object, or array</li>
+          </ul>
+          <p data-height="265" data-theme-id="0" data-slug-hash="yOZrvm" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/yOZrvm/">dogeXample</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </section>
 
-          <section>
-            <h3>Exercise</h3>
-            <ul>
-              <li><a href="demofiles.zip">Download the demo files</a></li>
-              <li>Open exercises/hello-world/hello-world.html in your text editor</li>
-              <li>Import the Angular library</li>
-              <li>Assign your root element with ng-app</li>
-              <li>Include html with a few string &amp; number expressions </li>
-            </ul>
-          </section>
+        <section>
+          <h3>Let's Code!</h3>
+          <p> Copy this &#x2193;</p>
+  <pre style="width:200px;"><code>&lt;!doctype html&gt;
+
+  &lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+
+  </code></pre>
+          <ul>
+            <li>In your GDI folder, create a file called <br> "hello-world.html"</li>
+            <li>Import the Angular library</li>
+            <li>Assign your root element with ng-app</li>
+            <li>Include html with a few string &amp; number expressions </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>An example Angular App</h3>
+          <p data-height="374" data-theme-id="0" data-slug-hash="ONdQWe" data-default-tab="result" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/ONdQWe/">dogApp.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
 
       </div>
       <footer>
