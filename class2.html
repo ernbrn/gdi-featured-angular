@@ -48,17 +48,35 @@
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
+        <section>
+          <h3>Agenda</h3>
+          <h5>Class 2</h5>
+          <ul>
+            <li>Free Pizza!</li>
+            <li>Brief Intro to Modules</li>
+            <li>Controllers!</li>
+            <li>A lot more coding!</li>
+            <li>A lot more JavaScript!</li>
+            <li>Exclamation points!</li>
+          </ul>
+        </section>
 
         <section>
           <h3>Modules</h3>
           <ul>
             <li>Where we write pieces of the app and define dependencies</li>
             <li>Module names are bound to <code>ng-app</code> directives</li>
+            <li>It's best practice to contain your code in an IIFE (Immediately Invoked Function Expression)</li>
           </ul>
+          <br>
+          <br>
+<small>in app.js</small>
 <pre><code>(function(){
   angular.module('myApp', []);
 })();
 </code></pre>
+<br>
+<small>in index.html</small>
 <pre><code class="xml">&lt;body ng-app="myApp"&gt;
   &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
   &lt;p&gt;Our President is {{ "Barack " + "Obama" }}&lt;/p&gt;
@@ -67,17 +85,20 @@
         </section>
 
         <section>
-          <h3>Controllers</h3>
+          <h3>All About Me: Controllers</h3>
           <ul>
-            <li>They're where most of the app's functionality comes from</li>
-            <li>They control the data that passes through</li>
             <li>They're regular JavaScript Objects</li>
-            <li>There can be more than one controller in an app</li>
+            <li>A Controller object is defined by its constructor function</li>
+            <li>A Controller object is instantiated when it's attached to the DOM via the <code>ng-controller</code> directive</li>
+            <li>They control the data that passes through</li>
+            <li>They should contain only the business logic needed for a single view</li>
+            <li>There can be more than one controller in an app (typically one per view)</li>
+            <li>The naming convention is a descriptive word or words in PascalCase, followed by 'Controller'. Like 'HomePageController'</li>
           </ul>
         </section>
 
         <section>
-          <h3>Controllers</h3>
+          <h3>Controllers Example</h3>
           <small>in app.js</small>
 <pre><code class="js">(function(){
   angular
@@ -93,10 +114,7 @@
   };
 })();
 </code></pre>
-        </section>
 
-        <section>
-          <h3>Controllers</h3>
           <small>in index.html</small>
 <pre><code class="xml">&lt;body ng-app="myApp"&gt;
 
@@ -108,7 +126,6 @@
 
 &lt;/body&gt;
 </code></pre>
-          <small>The scope of the controller is only within the <code>section</code> element!</small>
         </section>
 
         <section>
@@ -134,48 +151,12 @@
 
         <section>
           <h3>Controllers</h3>
-          <p>Often your data will be stored in an array, rather than a single object like we've seen so far</p>
-<pre><code class="js">(function(){
-angular
-  .module('myApp', [])
-  .controller('MainController', function(){
-    this.cats = cats;
-  });
-
-var cats = [
-  {
-    name: 'Ms. Whiskers',
-    age: 9,
-    eyes: 'blue'
-  },
-  {
-    name: 'Melvin',
-    age: 1,
-    eyes: 'green'
-  },
-  {
-    name: 'Tootsie',
-    age: 3,
-    eyes: 'grey'
-  }
-];
-})();
-</code></pre>
-        </section>
-
-        <section>
-          <h3>Controllers</h3>
-            <p>If your data is stored in an array, you'll need to loop through it or access specific items by index number</p>
-<pre><code class="xml">&lt;body ng-app="myApp"&gt;
-  &lt;section ng-controller="MainController as mainCtrl"&gt;
-    &lt;article ng-repeat="cat in mainCtrl.cats"&gt;
-    &lt;p&gt;My cat's name is {{cat.name}}&lt;/p&gt;
-    &lt;p&gt;She has {{cat.eyes}} eyes and she's
-    {{cat.age}} years old.&lt;/p&gt;
-    &lt;/article&gt;
-  &lt;/section&gt;
-&lt;/body&gt;
-</code></pre>
+          <ul>
+            <li>IRL your data will probably be stored in an array, rather than a single object like we've seen so far</li>
+            <li>If your data is stored in an array, you'll need to loop through it or access specific items by index number</li>
+          </ul>
+          <p data-height="265" data-theme-id="0" data-slug-hash="MyxPvy" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/MyxPvy/">fictitiousCats.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </section>
 
         <section>

@@ -326,6 +326,53 @@
             </ul>
           </section>
 
+          <section>
+            <h3>More Built-In Directives: <br />ng-repeat</h3>
+            <p>ng-repeat is Angular's way of looping</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;ul&gt;
+    &lt;li ng-repeat="item in ['Sal', 'Jo', 'Amir', 'Maria']"&gt;
+      {{item}} is my friend.
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3> Example with puppies, of course!</h3>
+            <p data-height="473" data-theme-id="0" data-slug-hash="PNLWYw" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/PNLWYw/">dogsRepeating.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-if</h3>
+            <p>ng-if is Angular's <code>if</code> statement</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;p ng-if="'Sal' === 'Sal'"&gt;True!&lt;/p&gt;
+  &lt;p ng-if="'Sal' === 'Jo'"&gt;False!&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-show/ng-hide</h3>
+            <p><code>ng-show</code> &amp; <code>ng-hide</code> toggle an element's display based on value</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;p ng-show="5> 2"&gt;Five is greater than two.&lt;/p&gt;
+  &lt;p ng-show="2> 5"&gt;Two is greater than five.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+            <small>Note: if the value of <code>ng-show</code> evaluates to false, the element will still live in the DOM</small>
+          </section>
+
+          <section>
+            <h3>Exercise</h3>
+            <ul>
+              <li>In hello-world.html, within your ng-app, use ng-repeat to loop through an array of your favorite TV shows, and display each one on the page</li>
+              <li>Use ng-show/ng-hide or ng-if to conditionally display an image of your favorite celebrity</li>
+            </ul>
+          </section>
 
         <section>
           <h3>An example Angular App</h3>
