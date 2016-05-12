@@ -49,6 +49,9 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
+          <h5> Hello Again! </h5>
+        </section>
+        <section>
           <h3>Agenda</h3>
           <h5>Class 2</h5>
           <ul>
@@ -58,7 +61,7 @@
             <li>Controllers!</li>
             <li>A lot more coding!</li>
             <li>A lot more JavaScript!</li>
-            <li>A lot more together reading!</li>
+            <li>A lot more code reading!</li>
             <li>Exclamation points!</li>
           </ul>
           <br>
@@ -72,71 +75,50 @@
           </div>
         </section>
 
-          <section>
-            <h3>More Built-In Directives: <br />ng-init & ng-click</h3>
-            <ul>
-              <li><code>ng-init</code> sets an initial value</li>
-              <li><code>ng-click</code>is Angular's click listener and will execute the JS it's given</li>
-            </ul>
+        <section>
+          <h3>More Built-In Directives: <br />ng-init, ng-click, &<br> ng-class</h3>
+          <ul>
+            <li><code>ng-init</code> sets an initial value</li>
+            <li><code>ng-click</code> is Angular's click listener and will execute the JS it's given</li>
+            <li><code>ng-class</code> conditionally adds a class based on value</li>
+          </ul>
 
-          </section>
+        </section>
 
-          <section>
-            <p data-height="623" data-theme-id="0" data-slug-hash="qZvQBM" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/qZvQBM/">ng-init.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-            <p><small><strong>Bonus!</strong> Angular will make your <code>ng-click</code> elements work with the keyboard too.</small></p>
-
-          </section>
-
-          <section>
-            <h3>More Built-In Directives: <br />ng-class</h3>
-            <p><code>ng-class</code> conditionally adds a class based on value</p>
-<pre><code class="xml">&lt;body ng-app&gt;
-  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
-
-    &lt;p ng-class="{'highlight': isOpen}"&gt;My Menu&lt;/p&gt;
-
-    &lt;button ng-click="isOpen = !isOpen"&gt;
-      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-    &lt;ul ng-show="isOpen"&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Blog&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/body&gt;
-</code></pre>
-          </section>
-
-          <section>
-            <h3>More Built-In Directives: <br />ng-class</h3>
-            <p>Here's another example:</p>
-<pre><code class="xml">&lt;body ng-app&gt;
-  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
-    &lt;button ng-click="isOpen = !isOpen"&gt;
-      &lt;i class="fa" ng-class="{
-        'fa-caret-square-o-down': !isOpen,
-        'fa-caret-square-o-up': isOpen}"&gt;
-      &lt;/i&gt;
-    &lt;/button&gt;
-    &lt;ul ng-show="isOpen"&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Blog&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/body&gt;
-</code></pre>
+        <section>
+          <p data-height="623" data-theme-id="0" data-slug-hash="qZvQBM" data-default-tab="html" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/qZvQBM/">ng-init.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          <p><small><strong>Bonus!</strong> Angular will make your <code>ng-click</code> elements work with the keyboard too.</small></p>
         </section>
 
         <section>
           <h3>Exercise</h3>
           <ul>
-            <li>In hello-world.html, within your ng-app, add a new <code>section</code> or <code>div</code> where you set a value to true or false with <code>ng-init</code></li>
-            <li>Within that section/div, add a button with an <code>ng-click</code> directive that toggles the <code>ng-init</code> value</li>
-            <li>Use <code>ng-show</code> or <code>ng-hide</code> to show/hide an image of your pet (or your favorite animal) on click of your button </li>
+            <li>In hello-world.html, within your ng-app experiment with <code>ng-init</code>, <code>ng-click</code>, and <code>ng-class</code>.
+            <li>If you've already played around with these, read the documentation on another built-in directive and test it out. Some suggestions:</li>
           </ul>
+          <br>
+          <br>
+          <div>
+            <ul style="float:left;">
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngClassEven" target="_blank"><code>ng-class-even</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngClassOdd" target="_blank"><code>ng-class-odd</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngKeydown" target="_blank"><code>ng-keydown</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngDisabled" target="_blank"><code>ng-disabled</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngCopy" target="_blank"><code>ng-copy</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngChecked" target="_blank"><code>ng-checked</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngDblclick" target="_blank"><code>ng-dblclick</code></a></li>
+            </ul>
+            <ul style="float:right;">
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngMousedown" target="_blank"><code>ng-mousedown</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngMouseenter" target="_blank"><code>ng-mouseenter</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngMouseleave" target="_blank"><code>ng-mouseleave</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngMousemove" target="_blank"><code>ng-mousemove</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngMouseover" target="_blank"><code>ng-mouseover</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngMouseup" target="_blank"><code>ng-mouseup</code></a></li>
+              <li><a href="https://docs.angularjs.org/api/ng/directive/ngOpen" target="_blank"><code>ng-open</code></a></li>
+            </ul>
+          </div>
         </section>
 
         <section>
@@ -149,11 +131,12 @@
           <h3>Modules</h3>
           <ul>
             <li>Where we write pieces of the app and define dependencies</li>
-            <li>Module names are bound to <code>ng-app</code> directives</li>
-            <li>It's best practice to contain your code in an IIFE (Immediately Invoked Function Expression)</li>
+            <li class="fragment">Module names are bound to <code>ng-app</code> directives</li>
+            <li class="fragment">It's best practice to contain your code in an IIFE (Immediately Invoked Function Expression)</li>
           </ul>
           <br>
           <br>
+          <div class="fragment">
 <small>in app.js</small>
 <pre><code>(function(){
   angular.module('myApp', []);
@@ -166,18 +149,19 @@
   &lt;p&gt;Our President is {{ "Barack " + "Obama" }}&lt;/p&gt;
 &lt;/body&gt;
 </code></pre>
+  </div>
         </section>
 
         <section>
           <h3>Controllers</h3>
           <ul>
             <li>They're regular JavaScript Objects</li>
-            <li>A Controller object is defined by its constructor function</li>
-            <li>A Controller object is instantiated when it's attached to the DOM via the <code>ng-controller</code> directive</li>
-            <li>They control the data that passes through</li>
-            <li>They should contain only the business logic needed for a single view</li>
-            <li>There can be more than one controller in an app (typically one per view)</li>
-            <li>The naming convention is a descriptive word or words in PascalCase, followed by 'Controller'. Like 'HomePageController'</li>
+            <li class="fragment">A Controller object is defined by its constructor function</li>
+            <li class="fragment">A Controller object is instantiated when it's attached to the DOM via the <code>ng-controller</code> directive</li>
+            <li class="fragment">They control the data that passes through</li>
+            <li class="fragment">They should contain only the business logic needed for a single view</li>
+            <li class="fragment">There can be more than one controller in an app (typically one per view)</li>
+            <li class="fragment">The naming convention is a descriptive word or words in PascalCase, followed by 'Controller'. Like 'HomePageController'</li>
           </ul>
         </section>
 
@@ -270,8 +254,8 @@
           <h3>Dependency Injection</h3>
           <ul>
             <li>Dependencies are standalone modules that can be pulled into your project for different uses</li>
-            <li>They can be included as external files in script tags, or if you're using grunt/gulp, usually they can be included as node modules</li>
-            <li><a href="http://gregpike.net/demos/angular-local-storage/demo/demo.html">Angular Local Storage</a> is a popular module that uses the browser's local storage to persist your data without saving it to a database</li>
+            <li class="fragment">They can be included as external files in script tags, or if you're using grunt/gulp, usually they can be included as node modules</li>
+            <li class="fragment"><a href="https://github.com/grevory/angular-local-storage" target="_blank">Angular Local Storage</a> is a popular module that uses the browser's local storage to persist your data without saving it to a database</li>
           </ul>
         </section>
 
@@ -280,13 +264,13 @@
         <section>
           <h3>Dependency Injection</h3>
 <!-- <pre><code>&lt;script src="js/angular.localstorage.js"&gt;&lt;script&gt;</code></pre> -->
-<pre><code class="js">angular.module('todoApp', ['LocalStorageModule'])
+<pre><code class="js" style="max-height:450px;height:450px;">angular.module('todoApp', ['LocalStorageModule'])
 .controller('TodoListController', function(localStorageService) {
   var todoList = this;
 
-  // todoList.todos = [
-  //   {text:'learn angular', done:true},
-  //   {text:'build an angular app', done:false}];
+   todoList.todos = [
+     {text:'learn angular', done:true},
+     {text:'build an angular app', done:false}];
 
   var todosInStore = localStorageService.get('myTodos');
 
@@ -303,28 +287,11 @@
         </section>
 
         <section>
-          <h3>Exercise</h3>
-          <ul>
-            <li>Include a script tag in todo-list/todo-list.html to reference localstorage.js</li>
-            <li>In todo-list/todo.js, include <code>'LocalStorageModule'</code> as a dependency and <code>localStorageService</code> as an argument in your controller callback function </li>
-            <li>Set a var called <code>todosInStore</code> with the value of <code>localStorageService.get('myTodos')</code></li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Exercise...continued</h3>
-          <ul>
-            <li>Comment out the array of <code>todoList.todos</code>, and set <code>todoList.todos</code> to: <code>todosInStore || []</code></li>
-            <li>Within your <code>addTodo</code> function, before the line that sets an empty string, add a function to set local storage with the array of todos as its updated (<code>localStorageService.set('myTodos', todoList.todos);</code>)</li>
-          </ul>
-        </section>
-
-        <section>
           <h3>$scope</h3>
           <ul>
             <li><a href="https://docs.angularjs.org/guide/scope">Angular scope</a> is an object that refers to the application model</li>
-            <li>In this workshop so far, we've been avoiding using <code>$scope</code> in favor of using <code>this</code> in our controllers to reference the application model</li>
-            <li>That's mainly because the <code>$scope</code> object is being phased out of Angular, and using <code>this</code> with <a href="http://toddmotto.com/digging-into-angulars-controller-as-syntax/">'controller as' syntax</a> is now considered best practice</li>
+            <li class="fragment">In this workshop so far, we've been avoiding using <code>$scope</code> in favor of using <code>this</code> in our controllers to reference the application model</li>
+            <li class="fragment">That's mainly because the <code>$scope</code> object is being phased out of Angular, and using <code>this</code> with <a href="http://toddmotto.com/digging-into-angulars-controller-as-syntax/">'controller as' syntax</a> is now considered best practice</li>
           </ul>
         </section>
 
@@ -332,8 +299,8 @@
           <h3>$scope</h3>
           <ul>
             <li>That said, at this point, we do still need to use the <code>$scope</code> object if we want to use some of the cool Angular features that come with it</li>
-            <li>For example, <code>$watch</code> is an API that watches/listens for changes in user input, and can run callback functions when changes occur</li>
-            <li>We can use <code>$scope.$watch</code> to save our checked off todo list items to local storage</li>
+            <li class="fragment">For example, <code>$watch</code> is an API that watches/listens for changes in user input, and can run callback functions when changes occur</li>
+            <li class="fragment">We can use <code>$scope.$watch</code> to save our checked off todo list items to local storage</li>
           </ul>
         </section>
 
@@ -358,66 +325,37 @@
   [...]
 });
 </code></pre>
-        </section>
-
+</section>
 
         <section>
-          <h3>From here onward...</h3>
-          <p>There are many more things you can do with Angular!</p>
+          <h3>Exercise</h3>
           <ul>
-            <li>Set up <a href="http://www.ng-newsletter.com/posts/directives.html">custom directives</a></li>
-            <li>Connect to external API's via <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a></li>
-            <li>Store data in a <a href="http://adrianmejia.com/blog/2014/09/28/angularjs-tutorial-for-beginners-with-nodejs-expressjs-and-mongodb/">database</a></li>
+            <li>Create a folder called <code>todo-list</code> and within it create a file called <code>todo-list.html</code></li>
+            <li>Include a script tag in todo-list/todo-list.html to reference localstorage.js (or get it from a CDN) </li>
+            <li>Create a file within your todo-list folder called <code>todo.js</code></li>
+            <li>In todo-list/todo.js, include <code>'LocalStorageModule'</code> as a dependency and <code>localStorageService</code> as an argument in your controller callback function </li>
+            <li>Set a var called <code>todosInStore</code> with the value of <code>localStorageService.get('myTodos')</code></li>
           </ul>
         </section>
 
         <section>
-          <h3>Angular 2.0</h3>
+          <h3>Exercise...continued</h3>
           <ul>
-            <li>Sometime in 2016, Angular 2.0 will be released</li>
-            <li>It will be a rewrite largely based on ES6</li>
-            <li>The global <code>$scope</code> object &amp; jqLite will be removed</li>
-            <li>The implementation of directives and controllers will change</li>
-            <li>But don't worry! The fundamentals you've learned in this workshop will live on!</li>
-            <li><a href="https://www.airpair.com/angularjs/posts/preparing-for-the-future-of-angularjs">Preparing for the Future of AngularJS</a></li>
-          </ul>
-        </section>
-
-
-        <section>
-          <h3>Next Steps</h3>
-          <ul>
-            <li>Read Up!
-              <ul>
-                <li><a href="http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">Journey Through the JavaScript MVC Jungle</a></li>
-                <li><a href="http://todomvc.com/">todomvc.com</a></li>
-                <li><a href="https://www.ng-book.com/">ng-book: The Complete Book on AngularJS</a></li>
-                <li><a href="http://www.ng-newsletter.com/">ng-newsletter</a></li>
-              </ul>
-            </li>
-            <li>Practice!
-              <ul><li><a href="http://www.codecademy.com/learn/learn-angularjs">Codeacademy AngularJS Course</a></li>
-              <li><a href="http://teamtreehouse.com/library/angularjs">Treehouse AngularJS Course</a></li>
-              <li><a href="https://www.codeschool.com/paths/javascript">Beginner &amp; Intermediate AngularJS Course on CodeSchool</a></li>
-              <li><a href="http://www.cheatography.com/proloser/cheat-sheets/angularjs/">AngularJS Cheatsheet</a></li></ul>
-            </li>
+            <li>Comment out the array of <code>todoList.todos</code>, and set <code>todoList.todos</code> to: <code>todosInStore || []</code></li>
+            <li>Within your <code>addTodo</code> function, before the line that sets an empty string, add a function to set local storage with the array of todos as its updated (<code>localStorageService.set('myTodos', todoList.todos);</code>)</li>
           </ul>
         </section>
 
         <section>
-          <h3>Next Steps</h3>
+          <h3>Homework</h3>
           <ul>
-            <li>Build Something!
-              <ul><li>FAQ list, gallery, quiz, calculator, or whatever else you can cook up!</li></ul>
-            </li>
+            <li>Build an app!</li>
+            <li>Try to incorporate anything from this class or the last that you feel like
+            you understand the <i>least</i>.</li>
+            <li>Be creative, accumulate questions (or ask them in Slack), and show it off to the class next Tuesday if you'd like!</li>
           </ul>
         </section>
 
-        <section>
-          <h2>Questions?</h2>
-          <div style="font-size:1200%; height:100%; margin-top:30%">?
-            <div class="clear"></div></div>
-        </section>
 
       </div>
       <footer>
