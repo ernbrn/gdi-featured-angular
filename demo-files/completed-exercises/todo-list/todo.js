@@ -15,6 +15,7 @@ angular.module('todoApp', ['LocalStorageModule'])
       localStorageService.set('myTodos', todoList.todos);
     }, true);
 
+    $scope.otherAnimal = 'Bees';
 
     todoList.addTodo = function() {
       todoList.todos.push({text: todoList.todoText, done: false});
@@ -29,6 +30,8 @@ angular.module('todoApp', ['LocalStorageModule'])
       });
       return count;
     };
+
+    console.log($scope);
 
   });
 

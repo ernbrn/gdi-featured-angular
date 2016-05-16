@@ -259,8 +259,6 @@
           </ul>
         </section>
 
-
-
         <section>
           <h3>Dependency Injection</h3>
 <!-- <pre><code>&lt;script src="js/angular.localstorage.js"&gt;&lt;script&gt;</code></pre> -->
@@ -284,66 +282,6 @@
   [...]
 });
 </code></pre>
-        </section>
-
-        <section>
-          <h3>$scope</h3>
-          <ul>
-            <li><a href="https://docs.angularjs.org/guide/scope">Angular scope</a> is an object that refers to the application model</li>
-            <li class="fragment">In this workshop so far, we've been avoiding using <code>$scope</code> in favor of using <code>this</code> in our controllers to reference the application model</li>
-            <li class="fragment">That's mainly because the <code>$scope</code> object is being phased out of Angular, and using <code>this</code> with <a href="http://toddmotto.com/digging-into-angulars-controller-as-syntax/">'controller as' syntax</a> is now considered best practice</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>$scope</h3>
-          <ul>
-            <li>That said, at this point, we do still need to use the <code>$scope</code> object if we want to use some of the cool Angular features that come with it</li>
-            <li class="fragment">For example, <code>$watch</code> is an API that watches/listens for changes in user input, and can run callback functions when changes occur</li>
-            <li class="fragment">We can use <code>$scope.$watch</code> to save our checked off todo list items to local storage</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>$scope.$watch</h3>
-<pre><code>angular.module('todoApp', ['LocalStorageModule'])
-.controller('TodoListController', function($scope, localStorageService) {
-  var todoList = this;
-
-  var todosInStore = localStorageService.get('myTodos');
-  todoList.todos = todosInStore || [];
-
-  $scope.$watch('todoList.todos', function () {
-    localStorageService.set('myTodos', todoList.todos);
-  }, true);
-  todoList.addTodo = function() {
-    todoList.todos.push({text:todoList.todoText, done:false});
-    //localStorageService.set('myTodos', todoList.todos);
-    todoList.todoText = '';
-  };
-
-  [...]
-});
-</code></pre>
-</section>
-
-        <section>
-          <h3>Exercise</h3>
-          <ul>
-            <li>Create a folder called <code>todo-list</code> and within it create a file called <code>todo-list.html</code></li>
-            <li>Include a script tag in todo-list/todo-list.html to reference localstorage.js (or get it from a CDN) </li>
-            <li>Create a file within your todo-list folder called <code>todo.js</code></li>
-            <li>In todo-list/todo.js, include <code>'LocalStorageModule'</code> as a dependency and <code>localStorageService</code> as an argument in your controller callback function </li>
-            <li>Set a var called <code>todosInStore</code> with the value of <code>localStorageService.get('myTodos')</code></li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Exercise...continued</h3>
-          <ul>
-            <li>Comment out the array of <code>todoList.todos</code>, and set <code>todoList.todos</code> to: <code>todosInStore || []</code></li>
-            <li>Within your <code>addTodo</code> function, before the line that sets an empty string, add a function to set local storage with the array of todos as its updated (<code>localStorageService.set('myTodos', todoList.todos);</code>)</li>
-          </ul>
         </section>
 
         <section>

@@ -23,6 +23,8 @@
 		<div ng-controller="TodoListController as todoList">
 
 		    <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+        <br>
+        {{ otherAnimal }}
 
 		    <ul class="unstyled">
 		      <li ng-repeat="todo in todoList.todos">
