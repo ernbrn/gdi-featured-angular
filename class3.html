@@ -64,7 +64,6 @@
             <li>$scope</li>
             <li>Nested Controllers</li>
             <li>Routing with ngRoute</li>
-            <li>Building Custom Directives</li>
           </ul>
         </section>
 
@@ -211,97 +210,6 @@
             <li>Add a new page to the Bike Store: Road Bikes</li>
             <li>Add the new section to the menu and link to it accordingly</li>
             <li>Make sure the new bikes are included in the "All Bikes" section</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Building Custom Directives</h3>
-          <ul>
-            <li>Remember those things?</li>
-            <li class="fragment">"At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler... to attach a specified behavior to that DOM element... or even to transform the DOM element and its children."</li>
-            <li class="fragment">Much like you create controllers and services, you can create your own directives for Angular to use</li>
-            <li class="fragment">We typically refer to directives by their case-sensitive camelCase normalized name (e.g. ngModel)</li>
-            <li class="fragment">Since HTML is case-insensitive, we refer to directives in the DOM by lower-case forms, typically using dash-delimited attributes on DOM elements (e.g. ng-model)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Building Custom Directives</h3>
-          <ul>
-            <li>Like a controller, we register them on the module with the normalized name, followed by a function that returns an object that tells Angular how the directive should behave.</li>
-            <li class="fragment">When Angular bootstraps your application, the HTML compiler traverses the DOM matching directives against the DOM elements</li>
-            <li class="fragment">It's best to leave the <code>ng</code> namespace to Angular</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Building Custom Directives</h3>
-            <p>A directive (unless told otherwise) has access to its parent's scope</p>
-            <p data-height="265" data-theme-id="0" data-slug-hash="EKJMXE" data-default-tab="js" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/EKJMXE/">simpleDirective.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-        </section>
-
-        <section>
-          <h3>Building Custom Directives</h3>
-          <ul>
-            <li>This directive is fine, but it's not super reusable</li>
-            <li class="fragment">In fact, as written it can only be used by the DogController</li>
-            <li class="fragment">Maybe there's a better way!</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>A better way: Isolate Scope</h3>
-          <p data-height="309" data-theme-id="0" data-slug-hash="eZaBNq" data-default-tab="js" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/eZaBNq/">isolateScopeDirective.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-          <small>Let's go add a controller to see how resuable this directive is!</small>
-        </section>
-
-        <section>
-          <h3>Directives that manipulate the DOM</h3>
-          <ul>
-            <li>Directives that want to modify the DOM typically use the <code>link</code> option to register DOM listeners as well as update the DOM</li>
-            <li class="fragment">The <code>link</code> option is a function that gives you access to several attributes including <code>scope</code>, <code>element</code>, and <code>attrs</code></li>
-            <li class="fragment"><code>scope</code> is an Angular scope object</li>
-            <li class="fragment"><code>element</code> is the <a href="https://docs.angularjs.org/api/ng/function/angular.element">jqLite</a> (Angular's built-in subset of jQuery) wrapped element that this directive matches</li>
-            <li class="fragment"><code>attrs</code> is a hash object with key-value pairs of normalized attribute names and their corresponding attribute values</li>
-          </ul>
-         </section>
-
-         <section>
-<pre><code>angular.module('myApp', [])
-.directive('mouseAlert', function () {
-  return {
-    scope: {
-      alert: '='
-    },
-    link: function (scope, element, attrs) {
-      //super awesome code here
-    }
-  }
-});
-</pre></code>
-        </section>
-
-        <section>
-          <h3>Exercise: Directives in the Bike Store (template + isolate scope)</h3>
-          <ul>
-            <li>The Bike Store is looking pretty good, but there are a lot of duplicated templates.</li>
-            <li>Additionally, now I want <b>"Name"</b>, <b>"Manufactuer"</b>, and <b>"Price"</b> to be in bold</li>
-            <li>Instead of making this change on each template, refactor the Bike Store to use a directive</li>
-            <li>This Directive should have an isolate scope so it can work with all 3 controllers</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Exercise: Directives in the Bike Store</h3>
-          <p>Modify your directive to include a <code>link</code> function to manipulate the DOM when you hover over an element.</p>
-          <p>Ideas include:</p>
-          <ul>
-            <li>Turning the background a different color</li>
-            <li>If the model contains a 'soldOut' property that's <code>true</code> trigger an alert that says so</li>
-            <li>Only show the image of the bike and only display price and model info when you hover over it</li>
-            <li>If you have a dream you want help executing, ask me or Josh!</li>
           </ul>
         </section>
 

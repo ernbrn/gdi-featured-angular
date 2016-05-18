@@ -49,33 +49,155 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h5>Last Class!</h5>
-          <p> Today we'll need a couple of new tools. If you haven't already, please do the following: </p>
-          <ul>
-            <li>Install node.js and npm (<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">great instructions here</a></li>
-            <li></li>
-          </ul>
+          <h5>Last Class! Woah!</h5>
+          <p> Today we'll be working in the Bike Store App </p>
 
         </section>
         <section>
           <h3>Agenda</h3>
           <h5>Class 4</h5>
           <ul>
+            <li>Building Custom Directives</li>
+            <li>Services</li>
+            <li>Filters</li>
           </ul>
-          <br>
-          <br>
-          <div class="fragment">
-            <h5> If we have time... </h5>
-            <ul>
-              <li></li>
-            </ul>
-          </div>
         </section>
 
         <section>
-          <p data-height="569" data-theme-id="0" data-slug-hash="qZGqmR" data-default-tab="result" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/qZGqmR/">domManipulationDirective.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          <h3>Building Custom Directives</h3>
+          <ul>
+            <li>Remember those things?</li>
+            <li class="fragment">"At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler... to attach a specified behavior to that DOM element... or even to transform the DOM element and its children."</li>
+            <li class="fragment">Much like you create controllers and services, you can create your own directives for Angular to use</li>
+            <li class="fragment">We typically refer to directives by their case-sensitive camelCase normalized name (e.g. ngModel)</li>
+            <li class="fragment">Since HTML is case-insensitive, we refer to directives in the DOM by lower-case forms, typically using dash-delimited attributes on DOM elements (e.g. ng-model)</li>
+          </ul>
         </section>
+
+        <section>
+          <h3>Building Custom Directives</h3>
+          <ul>
+            <li>Like a controller, we register them on the module with the normalized name, followed by a function that returns an object that tells Angular how the directive should behave.</li>
+            <li class="fragment">When Angular bootstraps your application, the HTML compiler traverses the DOM matching directives against the DOM elements</li>
+            <li class="fragment">It's best to leave the <code>ng</code> namespace to Angular</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Building Custom Directives</h3>
+            <p>A directive (unless told otherwise) has access to its parent's scope</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="EKJMXE" data-default-tab="js" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/EKJMXE/">simpleDirective.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <section>
+          <h3>Building Custom Directives</h3>
+          <ul>
+            <li>This directive is fine, but it's not super reusable</li>
+            <li class="fragment">In fact, as written it can only be used by the DogController</li>
+            <li class="fragment">Maybe there's a better way!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>A better way: Isolate Scope</h3>
+          <p data-height="309" data-theme-id="0" data-slug-hash="eZaBNq" data-default-tab="js" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/eZaBNq/">isolateScopeDirective.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          <small>Let's go add a controller to see how resuable this directive is!</small>
+        </section>
+
+        <section>
+          <h3>Directives that manipulate the DOM</h3>
+          <ul>
+            <li>Directives that want to modify the DOM typically use the <code>link</code> option to register DOM listeners as well as update the DOM</li>
+            <li class="fragment">The <code>link</code> option is a function that gives you access to several attributes including <code>scope</code>, <code>element</code>, and <code>attrs</code></li>
+            <li class="fragment"><code>scope</code> is an Angular scope object</li>
+            <li class="fragment"><code>element</code> is the <a href="https://docs.angularjs.org/api/ng/function/angular.element">jqLite</a> (Angular's built-in subset of jQuery) wrapped element that this directive matches</li>
+            <li class="fragment"><code>attrs</code> is a hash object with key-value pairs of normalized attribute names and their corresponding attribute values</li>
+          </ul>
+         </section>
+
+         <section>
+<pre><code>angular.module('myApp', [])
+.directive('mouseAlert', function () {
+  return {
+    scope: {
+      alert: '='
+    },
+    link: function (scope, element, attrs) {
+      //super awesome code here
+    }
+  }
+});
+</pre></code>
+        </section>
+
+        <section>
+          <h3>Exercise: Directives in the Bike Store (template + isolate scope)</h3>
+          <ul>
+            <li>The Bike Store is looking pretty good, but there are a lot of duplicated templates.</li>
+            <li>Additionally, now I want <b>"Name"</b>, <b>"Manufactuer"</b>, and <b>"Price"</b> to be in bold</li>
+            <li>Instead of making this change on each template, refactor the Bike Store to use a directive</li>
+            <li>This Directive should have an isolate scope so it can work with all 3 controllers</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Exercise: Directives in the Bike Store</h3>
+          <p>Modify your directive to include a <code>link</code> function to manipulate the DOM when you hover over an element.</p>
+          <p>Ideas include:</p>
+          <ul>
+            <li>Turning the background a different color</li>
+            <li>If the model contains a 'soldOut' property that's <code>true</code> trigger an alert that says so</li>
+            <li>Only show the image of the bike and only display price and model info when you hover over it</li>
+            <li>If you have a dream you want help executing, ask me or Josh!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Services</h3>
+          <ul>
+            <li>Angular services are substitutable objects that are wired together using dependency injection</li>
+            <li class="fragment">You can use services to organize and share code across your app</li>
+            <li class="fragment">Angular comes with a bunch of them, and we can also create custom services</li>
+            <li class="fragment">Services are created using a service factory function which generate the single object or function that represents the service to the application</li>
+            <li class="fragment">Services are Singletons. Each component dependent on a service gets a reference to the single instance generated by the service factory.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3><a href="http://codepen.io/ernbrn/pen/WwBgYz?editors=1010" target="_blank">Custom Service Example</a></h3>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+          <ul>
+            <li>Add a simple 'Like' button to each page (skipping the 'All Bikes' page for now)</li>
+            <li>Write a service with a <code>setLikes</code> function that tallies the likes from all the pages, and a <code>getLikes</code> function that returns the tally</li>
+            <li>Display the tally on each page</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Filters</h3>
+          <ul>
+            <li>A filter formats the value of an expression for display to the user. Filters DO NOT change the model</li>
+            <li class="fragment">They can be used in view templates, controllers or services</li>
+            <li class="fragment">Angular comes with some filters, and it's super duper easy to make your own filter</li>
+            <li class="fragment">Filers have the following syntax: <code>{{ expression | filter }}</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <p data-height="358" data-theme-id="0" data-slug-hash="wGbEbp" data-default-tab="html,result" data-user="ernbrn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/ernbrn/pen/wGbEbp/">angularFilters.js</a> by Erin Brown (<a href="http://codepen.io/ernbrn">@ernbrn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <section>
+          <h3><a href="http://codepen.io/ernbrn/pen/EKzdjx?editors=1010" target="_blank">Custom Filter Example</a></h3>
+        </section>
+
+
 
       </div>
       <footer>
